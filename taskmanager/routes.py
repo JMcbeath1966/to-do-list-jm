@@ -3,6 +3,18 @@ from taskmanager import app, db
 from taskmanager.models import Category, Task
 
 
+# These are calling python functions, not the app route
 @app.route("/")
-def home():
+def home():  
     return render_template("tasks.html")
+
+
+@app.route("/catagories")
+def catergories():
+    return render_template("categories.html")
+
+
+@app.route("/add_category", methods=["GET", "POST"])
+def add_category():
+    return render_template("add_category")
+
